@@ -107,9 +107,6 @@ const ModalCommand = ({ commandsDetails, setModal }) => {
                                             <b>name : {name} </b>
                                         </div>
                                         <div className='py-3 px-3  text-white bg-dark'>
-                                            <b>description : {description} </b>
-                                        </div>
-                                        <div className='py-3 px-3  text-white bg-dark'>
                                             <b>quantity : {quantity} </b>
                                         </div>
                                         <div className='py-3 px-3  text-white bg-dark'>

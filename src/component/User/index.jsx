@@ -22,10 +22,15 @@ const User = () => {
         }).catch((err) => { console.log(err) })
     }, [users])
 
-    const deleteuser = (id) => {
-        axios.delete(`${baseURI}/${id}`, axiosConfig).then((res) => {
-            window.location.replace("/admin/user")
-        }).catch((err) => { console.log(err) })
+    const deleteuser = (role, id) => {
+        if (role === 'admin') {
+            alert("you can't delete admin")
+        } else {
+            axios.delete(`${baseURI}/users/${id}`, axiosConfig).then((res) => {
+                window.location.replace("/admin/user")
+            }).catch((err) => { console.log(err) })
+        }
+
     }
 
 
@@ -60,7 +65,7 @@ const User = () => {
                                     <td  >
                                         <Link to={`/admin/user/update/${_id}`} type="button" className="btn btn-primary mx-1" onClick={() => { setCurrentUser({ _id, firstname, lastname, email, accountFor }) }}   >update</Link>
                                         <button type="button" className="btn btn-info mx-1" onClick={() => { setUserDetails({ _id, firstname, lastname, email, password, role, accountFor }); setModal(true) }}>details</button>
-                                        <button type="button" className="btn btn-danger mx-1" onClick={() => deleteuser(_id)}  >delete</button>
+                                        <button type="button" className="btn btn-danger mx-1" onClick={() => { deleteuser(role, _id) }}  >delete</button>
                                     </td>
                                 </tr>
                             )
