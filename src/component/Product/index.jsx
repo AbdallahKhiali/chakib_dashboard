@@ -70,7 +70,7 @@ const Product = () => {
                                     <td  >{price}</td>
                                     <td  >{type}</td>
                                     <td  >
-                                        <Link to={`/admin/product/update/${_id}`} className="btn btn-primary mx-1">update</Link>
+                                        <Link to={`/admin/product/update/${_id}`}  className="btn btn-primary mx-1">update</Link>
                                         <button type="button" className="btn btn-info mx-1" onClick={() => { setProductDetails({ _id, name, price, type, description, images, size, colors }); setModal(true) }}>details</button>
                                         <button onClick={() => { deleteproduct(_id) }} type="button" className="btn btn-danger mx-1"  >delete</button>
                                     </td>

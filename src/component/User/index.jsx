@@ -10,7 +10,9 @@ const User = () => {
     const [userDetails, setUserDetails] = useState(null)
     const [modal, setModal] = useState(false)
 
-    const { axiosConfig } = useContext(Context)
+
+
+    const { axiosConfig, currentUser, setCurrentUser } = useContext(Context)
 
     const baseURI = "http://localhost:3004/api/v1"
 
@@ -41,7 +43,6 @@ const User = () => {
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Email</th>
-                        {/* <th scope="col">Password</th> */}
                         <th scope="col">role</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -57,7 +58,7 @@ const User = () => {
                                     <td  >{email}</td>
                                     <td  >{role}</td>
                                     <td  >
-                                        <Link to={`/admin/user/update/${_id}`} type="button" className="btn btn-primary mx-1">update</Link>
+                                        <Link to={`/admin/user/update/${_id}`} type="button" className="btn btn-primary mx-1" onClick={() => { setCurrentUser({ _id, firstname, lastname, email, accountFor }) }}   >update</Link>
                                         <button type="button" className="btn btn-info mx-1" onClick={() => { setUserDetails({ _id, firstname, lastname, email, password, role, accountFor }); setModal(true) }}>details</button>
                                         <button type="button" className="btn btn-danger mx-1" onClick={() => deleteuser(_id)}  >delete</button>
                                     </td>

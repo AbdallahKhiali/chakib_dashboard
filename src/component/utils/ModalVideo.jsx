@@ -1,7 +1,9 @@
 import React from 'react'
 import "./modal.scss"
 const ModalVideo = ({ videoDetails, setModal }) => {
-    const { _id, title, link, picture } = videoDetails
+    const { _id, title, link, image } = videoDetails
+    const baseURI = "http://localhost:3004/api/v1"
+
 
     return (
         <div className='modal_wrapper' >
@@ -12,7 +14,7 @@ const ModalVideo = ({ videoDetails, setModal }) => {
                 </div>
                 <p className='my-3 py-1 ' >Informations</p>
                 <div className="img_wrapper  border rounded-3">
-                    <img className='img-fluid img-responsive h-100 w-100' src={picture} alt="logo" />
+                    <img className='img-fluid img-responsive h-100 w-100' src={baseURI+"/"+ image} alt="pic of video" />
                 </div>
                 <div className="row p-2  col ">
 
@@ -39,10 +41,6 @@ const ModalVideo = ({ videoDetails, setModal }) => {
 
                     </div>
                 </div>
-                <b className='border-bottom pb-2' >picture of video :</b>
-                <p className='py-3'>
-                    {picture}
-                </p>
             </div>
         </div>
     )

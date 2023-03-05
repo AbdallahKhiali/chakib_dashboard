@@ -33,7 +33,6 @@ const UpdateProduct = () => {
             setCurrentProduct(res.data)
             setSelectedOptions(res.data.colors)
             setSelectedSizes(res.data.size)
-            window.location.replace("/admin/product")
         }).catch((err) => { console.log(err) })
     }, [])
 
@@ -64,7 +63,7 @@ const UpdateProduct = () => {
                 'Content-Type': 'multipart/form-data; boundary=your-boundary-string',
                 "Authorization": "Bearer " + token
             }
-        }).then((res) => { setLoading(false); window.location.replace("/product") })
+        }).then((res) => { setLoading(false); window.location.replace("/admin/product")    })
             .catch(() => { setLoading(false); alert("fail") })
 
 

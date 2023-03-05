@@ -18,6 +18,7 @@ import Loading from "./component/utils/Loading";
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [currentUser, setCurrentUser] = useState()
   const isAdmin = JSON.parse(localStorage.getItem("role"));
   const isAuth = JSON.parse(sessionStorage.getItem("auth"));
   const token = JSON.parse(localStorage.getItem("token"));
@@ -31,7 +32,7 @@ function App() {
   };
 
   return (
-    <Context.Provider value={{ axiosConfig, setLoading, loading }}>
+    <Context.Provider value={{ axiosConfig, setLoading, loading, currentUser, setCurrentUser }}>
       {(isAuth && isAdmin) ? (
         <div className="dashboard bg-primary p-0 col-md-12">
           <div className="col-md-2">

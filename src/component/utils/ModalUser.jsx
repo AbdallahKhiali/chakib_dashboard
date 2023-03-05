@@ -26,7 +26,6 @@ const ModalUser = ({ userDetails, setModal }) => {
                             <b className='' >First Name of User :</b>
                             <p>
                                 {firstname}
-                                {lastname}
                             </p>
                         </div>
                         <div className='row'>

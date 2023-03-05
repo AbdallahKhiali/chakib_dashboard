@@ -6,9 +6,8 @@ import "../../style/page.scss"
 const UpdateUser = () => {
 
     const { id } = useParams()
-    const { axiosConfig } = useContext(Context)
 
-    const [currentUser, setCurrentUser] = useState()
+    const { axiosConfig, currentUser, setCurrentUser } = useContext(Context)
 
     const baseURI = "http://localhost:3004/api/v1"
 
@@ -19,16 +18,9 @@ const UpdateUser = () => {
     }
 
 
-
-    useEffect(() => {
-        axios.get(`${baseURI}/${id}`, axiosConfig).then((res) => {
-            setCurrentUser(res.data)
-        }).catch((err) => { console.log(err) })
-    }, [])
-
     const updateUser = () => {
-        axios.put(`${baseURI}/${id}`, currentUser, axiosConfig).then((res) => {
-            // console.log("update product working :", res.data)
+        console.log(currentUser + 'currentUser')
+        axios.put(`${baseURI}/users/${id}`, currentUser, axiosConfig).then((res) => {
             setCurrentUser(res.data)
         }).catch((err) => { console.log(err) })
 

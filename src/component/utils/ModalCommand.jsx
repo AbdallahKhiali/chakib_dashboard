@@ -1,6 +1,8 @@
 import React from 'react'
 import "./modal.scss"
 const ModalCommand = ({ commandsDetails, setModal }) => {
+    const baseURI = "http://localhost:3004/api/v1"
+
     const { _id, commune, wilaya, adresse, lastName, firstName, phoneNumber, email, products, age, height, weight, sickness, sleepTime, wakeTime, job, timeSpentWorking, maritalStatus, blood, gender } = commandsDetails
     // console.log(commandsDetails)
 
@@ -98,7 +100,7 @@ const ModalCommand = ({ commandsDetails, setModal }) => {
                             return (
                                 <div className='bg-primary d-flex  m-3 p-5 rounded-2' >
                                     <div className='col-md-4' >
-                                        <img src={picture} className="img-fluid img-responsive h-100 w-100" alt="command-pic" />
+                                        <img src={baseURI+"/"+picture} className="img-fluid img-responsive h-100 w-100" alt="command-pic" />
                                     </div>
                                     <div className='col-md-8' >
                                         <div className=' py-3 px-3 text-white bg-dark'>
