@@ -100,7 +100,7 @@ const ModalCommand = ({ commandsDetails, setModal }) => {
                             return (
                                 <div className='bg-primary d-flex  m-3 p-5 rounded-2' >
                                     <div className='col-md-4' >
-                                        <img src={baseURI+"/"+picture} className="img-fluid img-responsive h-100 w-100" alt="command-pic" />
+                                        <img src={baseURI + "/" + picture} className="img-fluid img-responsive h-100 w-100" alt="command-pic" />
                                     </div>
                                     <div className='col-md-8' >
                                         <div className=' py-3 px-3 text-white bg-dark'>
